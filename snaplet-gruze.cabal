@@ -1,0 +1,61 @@
+name:               snaplet-gruze
+version:            0.1
+synopsis:           Object store and querying library
+description: {
+Gruze is a persistent object store and querying library written in Haskell.
+It is intended for use with applications that require flexible and
+over-rideable data models (for example a web application with a plugin
+architecture that allows adding new features and data to existing
+functionality).
+.
+This is currently beta quality code tested with Sqlite3, MySQL (both native and
+ODBC drivers) and PostgreSQL
+.
+An example model (blogging with multiple user roles) can be found in gruzeTest.
+.
+An overview document (PDF format) can be found here:
+.
+<http://github.com/downloads/kevinjardine/Gruze-Store>
+}
+category:           Web
+license:            GPL
+license-file:       LICENSE
+author:             Kevin Jardine
+maintainer:         kevin@gruze.org
+stability:          unstable
+cabal-version:      >= 1.6
+build-type:         Simple
+homepage:           http://gruze.org
+Library
+  hs-source-dirs:     src
+  build-depends:      base >= 4 && < 5,
+                      containers,
+                      split,
+                      HDBC >= 2.2,
+                      HDBC-sqlite3 >= 2.3,
+                      bytestring,
+                      old-time,
+                      time,
+                      old-locale,
+                      random,
+                      process,
+                      directory,
+                      snaplet-hdbc,
+                      snap,
+                      data-lens-template >= 2,
+                      mtl,
+                      configurator,
+                      unordered-containers,
+                      text,
+                      monad-control
+                      
+  exposed-modules:    Snap.Snaplet.Gruze,
+                      Snap.Snaplet.Gruze.Box
+                      
+  other-modules:      Snap.Snaplet.Gruze.Types
+                      Snap.Snaplet.Gruze.IO
+                      Snap.Snaplet.Gruze.QueryDef
+                      Snap.Snaplet.Gruze.Utility
+                      Snap.Snaplet.Gruze.Query         
+                      Snap.Snaplet.Gruze.Handles
+                    
